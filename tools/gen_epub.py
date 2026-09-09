@@ -212,7 +212,9 @@ def main():
 
     nav = ['<nav epub:type="toc" id="toc"><h1>Contents</h1><ol>']
     for part_title, kids in nav_items:
-        nav.append(f"<li>{esc(part_title)}<ol>")
+        # A nav list item must open with an anchor or a span; bare text is
+        # invalid EPUB and epubcheck rejects it.
+        nav.append(f"<li><span>{esc(part_title)}</span><ol>")
         for href, label in kids:
             nav.append(f'<li><a href="{href}">{esc(label)}</a></li>')
         nav.append("</ol></li>")
