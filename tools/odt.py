@@ -51,6 +51,13 @@ TEXT = {
     "url": "URL [PACKT]",
 }
 
+# A chapter opening in the combined book starts on a fresh page.
+BREAK_STYLE = """<style:style style:name="chapbreak" style:family="paragraph"
+ style:parent-style-name="Heading_20_1">
+<style:paragraph-properties fo:break-before="page"/>
+</style:style>"""
+
+
 FRAME_STYLE = """<style:style style:name="fig" style:family="graphic">
 <style:graphic-properties text:anchor-type="as-char" style:vertical-pos="middle"
  style:vertical-rel="text" fo:margin-top="0.15cm" fo:margin-bottom="0.15cm"
@@ -197,7 +204,8 @@ def write_odt(path, body_xml, styles_xml, title, subject="", images=None):
                         f'manifest:media-type="image/png"/>\n')
     manifest.append(MANIFEST_TAIL)
 
-    head = CONTENT_HEAD.replace("__AUTOSTYLES__", FRAME_STYLE if images else "")
+    head = CONTENT_HEAD.replace("__AUTOSTYLES__",
+                                (FRAME_STYLE if images else "") + BREAK_STYLE)
 
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
         # The mimetype entry must be first and stored uncompressed.
