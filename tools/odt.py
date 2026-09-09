@@ -51,6 +51,25 @@ TEXT = {
     "url": "URL [PACKT]",
 }
 
+# The template's "end of list" styles carry no list-style reference, so inside a
+# real list the last item indents differently from the ones above it. These take
+# the ordinary bullet style instead and add only the extra space after the list,
+# which is all the end styles were for.
+LIST_END_STYLES = """<style:style style:name="bullet_end_l" style:family="paragraph"
+ style:parent-style-name="Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num13">
+<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+ fo:margin-bottom="0.212cm"/></style:style>
+<style:style style:name="bullet2_end_l" style:family="paragraph"
+ style:parent-style-name="Bullet_20_Within_20_Bullet_20__5b_PACKT_5d_"
+ style:list-style-name="WW8Num13">
+<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+ fo:margin-bottom="0.212cm"/></style:style>
+<style:style style:name="number_end_l" style:family="paragraph"
+ style:parent-style-name="Numbered_20_Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num1">
+<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+ fo:margin-bottom="0.212cm"/></style:style>"""
+
+
 # A chapter opening in the combined book starts on a fresh page.
 BREAK_STYLE = """<style:style style:name="chapbreak" style:family="paragraph"
  style:parent-style-name="Heading_20_1">
@@ -163,8 +182,8 @@ def image(name, pixel_size, style="figure"):
             f'</draw:frame></text:p>\n')
 
 
-def para(kind, text, raw=False):
-    style = encode_style(PARA[kind])
+def para(kind, text, raw=False, style_name=None):
+    style = style_name or encode_style(PARA[kind])
     body = text if raw else inline(text)
     tag = "text:h" if kind in ("h1", "h2", "h3", "h4") else "text:p"
     level = ""
@@ -183,12 +202,23 @@ def code_block(lines):
     return "".join(out)
 
 
+# The template's bullet styles carry a list-style reference, but ODF only draws
+# a marker when the paragraphs sit inside a text:list. Paragraph style alone
+# gives correctly indented text with no bullet in front of it.
+LIST_STYLE = {"bullet": "WW8Num13", "bullet2": "WW8Num13", "number": "WW8Num1"}
+
+
 def bullets(items, style="bullet"):
-    out = []
+    """A list, wrapped so the marker is actually drawn."""
     end = style + "_end"
+    body = []
     for i, item in enumerate(items):
-        out.append(para(end if i == len(items) - 1 else style, item))
-    return "".join(out)
+        last = i == len(items) - 1
+        kind = end if last else style
+        name = f"{style}_end_l" if last else None
+        body.append(f"<text:list-item>{para(kind, item, style_name=name)}</text:list-item>")
+    return (f'<text:list text:style-name="{LIST_STYLE.get(style, "WW8Num13")}">'
+            + "".join(body) + "</text:list>\n")
 
 
 def write_odt(path, body_xml, styles_xml, title, subject="", images=None):
@@ -205,7 +235,8 @@ def write_odt(path, body_xml, styles_xml, title, subject="", images=None):
     manifest.append(MANIFEST_TAIL)
 
     head = CONTENT_HEAD.replace("__AUTOSTYLES__",
-                                (FRAME_STYLE if images else "") + BREAK_STYLE)
+                                (FRAME_STYLE if images else "")
+                                + BREAK_STYLE + LIST_END_STYLES)
 
     with zipfile.ZipFile(path, "w", zipfile.ZIP_DEFLATED) as z:
         # The mimetype entry must be first and stored uncompressed.
