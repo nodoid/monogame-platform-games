@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0-ios</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <Nullable>disable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>Chapter15</RootNamespace>
+    <AssemblyName>ch15.iOS</AssemblyName>
+    <ApplicationId>com.retrobook.ch15</ApplicationId>
+    <ApplicationTitle>15 Climbing</ApplicationTitle>
+    <ApplicationVersion>1</ApplicationVersion>
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
+    <InvariantGlobalization>true</InvariantGlobalization>
+    <XSAppIconAssets>Assets.xcassets/AppIcon.appiconset</XSAppIconAssets>
+    <!-- SdkOnly keeps the linker away from our own reflection-free code while
+         still stripping the framework; full linking has caught us out on
+         SoundEffect construction in the past. -->
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchInterpreter Condition="'$(Configuration)'=='Debug'">-all</MtouchInterpreter>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MonoGame.Framework.iOS" Version="3.8.5.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Game\**\*.cs" LinkBase="Game" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <ImageAsset Include="Assets.xcassets\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- BundleResource copies to the app bundle root, where TitleContainer looks. -->
+    <BundleResource Include="../../../assets\climber\**\*.png" Link="Content\%(Filename)%(Extension)" />
+    <BundleResource Include="../../../assets\climber\**\*.wav" Link="Content\%(Filename)%(Extension)" />
+    <BundleResource Include="../../../assets\shared\**\*.png" Link="Content\%(Filename)%(Extension)" />
+    <BundleResource Include="../../../assets\shared\**\*.wav" Link="Content\%(Filename)%(Extension)" />
+  </ItemGroup>
+
+</Project>

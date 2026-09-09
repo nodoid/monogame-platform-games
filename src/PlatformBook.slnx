@@ -1,0 +1,190 @@
+<Solution>
+  <Folder Name="/Part 0 - Shared Foundations/" />
+  <Folder Name="/Part 0 - Shared Foundations/ch01 Two Games/">
+    <Project Path="ch01/Android/ch01.Android.csproj" />
+    <Project Path="ch01/iOS/ch01.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch02 Setup/">
+    <Project Path="ch02/Android/ch02.Android.csproj" />
+    <Project Path="ch02/iOS/ch02.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch03 Game Loop/">
+    <Project Path="ch03/Android/ch03.Android.csproj" />
+    <Project Path="ch03/iOS/ch03.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch04 Sprites/">
+    <Project Path="ch04/Android/ch04.Android.csproj" />
+    <Project Path="ch04/iOS/ch04.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch05 Input/">
+    <Project Path="ch05/Android/ch05.Android.csproj" />
+    <Project Path="ch05/iOS/ch05.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch06 Animation/">
+    <Project Path="ch06/Android/ch06.Android.csproj" />
+    <Project Path="ch06/iOS/ch06.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch07 Collision/">
+    <Project Path="ch07/Android/ch07.Android.csproj" />
+    <Project Path="ch07/iOS/ch07.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch08 Screens/">
+    <Project Path="ch08/Android/ch08.Android.csproj" />
+    <Project Path="ch08/iOS/ch08.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch09 Audio/">
+    <Project Path="ch09/Android/ch09.Android.csproj" />
+    <Project Path="ch09/iOS/ch09.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch10 Sound FX/">
+    <Project Path="ch10/Android/ch10.Android.csproj" />
+    <Project Path="ch10/iOS/ch10.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch11 Scores/">
+    <Project Path="ch11/Android/ch11.Android.csproj" />
+    <Project Path="ch11/iOS/ch11.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 0 - Shared Foundations/ch12 Saving/">
+    <Project Path="ch12/Android/ch12.Android.csproj" />
+    <Project Path="ch12/iOS/ch12.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/" />
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch13 Stages/">
+    <Project Path="ch13/Android/ch13.Android.csproj" />
+    <Project Path="ch13/iOS/ch13.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch14 Walking/">
+    <Project Path="ch14/Android/ch14.Android.csproj" />
+    <Project Path="ch14/iOS/ch14.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch15 Climbing/">
+    <Project Path="ch15/Android/ch15.Android.csproj" />
+    <Project Path="ch15/iOS/ch15.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch16 Jumping/">
+    <Project Path="ch16/Android/ch16.Android.csproj" />
+    <Project Path="ch16/iOS/ch16.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch17 Barrels/">
+    <Project Path="ch17/Android/ch17.Android.csproj" />
+    <Project Path="ch17/iOS/ch17.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch18 Enemies/">
+    <Project Path="ch18/Android/ch18.Android.csproj" />
+    <Project Path="ch18/iOS/ch18.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch19 Hammer/">
+    <Project Path="ch19/Android/ch19.Android.csproj" />
+    <Project Path="ch19/iOS/ch19.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch20 Lives/">
+    <Project Path="ch20/Android/ch20.Android.csproj" />
+    <Project Path="ch20/iOS/ch20.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch21 Climber SFX/">
+    <Project Path="ch21/Android/ch21.Android.csproj" />
+    <Project Path="ch21/iOS/ch21.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch22 Climber Music/">
+    <Project Path="ch22/Android/ch22.Android.csproj" />
+    <Project Path="ch22/iOS/ch22.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch23 Hi Scores/">
+    <Project Path="ch23/Android/ch23.Android.csproj" />
+    <Project Path="ch23/iOS/ch23.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch24 Difficulty/">
+    <Project Path="ch24/Android/ch24.Android.csproj" />
+    <Project Path="ch24/iOS/ch24.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch25 Attract/">
+    <Project Path="ch25/Android/ch25.Android.csproj" />
+    <Project Path="ch25/iOS/ch25.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 1 - The Climber - Monkey Climber/ch26 Climber Polish/">
+    <Project Path="ch26/Android/ch26.Android.csproj" />
+    <Project Path="ch26/iOS/ch26.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/" />
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch27 Screens 15/">
+    <Project Path="ch27/Android/ch27.Android.csproj" />
+    <Project Path="ch27/iOS/ch27.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch28 Camera/">
+    <Project Path="ch28/Android/ch28.Android.csproj" />
+    <Project Path="ch28/iOS/ch28.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch29 Tile Map/">
+    <Project Path="ch29/Android/ch29.Android.csproj" />
+    <Project Path="ch29/iOS/ch29.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch30 Running/">
+    <Project Path="ch30/Android/ch30.Android.csproj" />
+    <Project Path="ch30/iOS/ch30.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch31 Jump Feel/">
+    <Project Path="ch31/Android/ch31.Android.csproj" />
+    <Project Path="ch31/iOS/ch31.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch32 Ropes/">
+    <Project Path="ch32/Android/ch32.Android.csproj" />
+    <Project Path="ch32/iOS/ch32.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch33 Hazards/">
+    <Project Path="ch33/Android/ch33.Android.csproj" />
+    <Project Path="ch33/iOS/ch33.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch34 Arrows/">
+    <Project Path="ch34/Android/ch34.Android.csproj" />
+    <Project Path="ch34/iOS/ch34.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch35 The Bell/">
+    <Project Path="ch35/Android/ch35.Android.csproj" />
+    <Project Path="ch35/iOS/ch35.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch36 The Clock/">
+    <Project Path="ch36/Android/ch36.Android.csproj" />
+    <Project Path="ch36/iOS/ch36.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch37 Bonus/">
+    <Project Path="ch37/Android/ch37.Android.csproj" />
+    <Project Path="ch37/iOS/ch37.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch38 Design/">
+    <Project Path="ch38/Android/ch38.Android.csproj" />
+    <Project Path="ch38/iOS/ch38.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch39 Parallax/">
+    <Project Path="ch39/Android/ch39.Android.csproj" />
+    <Project Path="ch39/iOS/ch39.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch40 Bell SFX/">
+    <Project Path="ch40/Android/ch40.Android.csproj" />
+    <Project Path="ch40/iOS/ch40.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch41 Warnings/">
+    <Project Path="ch41/Android/ch41.Android.csproj" />
+    <Project Path="ch41/iOS/ch41.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 2 - The Runner - Run and Jump/ch42 Bell Polish/">
+    <Project Path="ch42/Android/ch42.Android.csproj" />
+    <Project Path="ch42/iOS/ch42.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 3 - Beyond the Two Games/" />
+  <Folder Name="/Part 3 - Beyond the Two Games/ch43 Speed/">
+    <Project Path="ch43/Android/ch43.Android.csproj" />
+    <Project Path="ch43/iOS/ch43.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 3 - Beyond the Two Games/ch44 Settings/">
+    <Project Path="ch44/Android/ch44.Android.csproj" />
+    <Project Path="ch44/iOS/ch44.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 3 - Beyond the Two Games/ch45 Release/">
+    <Project Path="ch45/Android/ch45.Android.csproj" />
+    <Project Path="ch45/iOS/ch45.iOS.csproj" />
+  </Folder>
+  <Folder Name="/Part 3 - Beyond the Two Games/ch46 Both Games/">
+    <Project Path="ch46/Android/ch46.Android.csproj" />
+    <Project Path="ch46/iOS/ch46.iOS.csproj" />
+  </Folder>
+</Solution>

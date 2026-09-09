@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Android/ch38.Android.csproj" />
+  <Project Path="iOS/ch38.iOS.csproj" />
+</Solution>

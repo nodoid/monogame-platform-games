@@ -1,0 +1,20 @@
+# Build output
+bin/
+obj/
+*.user
+*.binlog
+
+# Generator scratch (gen_audio.py's default target when run without a path)
+/out/
+
+# macOS
+.DS_Store
+
+# The book's chapters: the markup sources and the generated documents.
+# The code, the tools that generate it, the figures and the covers are tracked.
+book/src/
+book/ch*.odt
+
+# The publisher's author template that styles those chapters. It has no use
+# without them, and it is not ours to redistribute.
+book/.styles.xml
