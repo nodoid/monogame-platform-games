@@ -9,6 +9,10 @@ stages of sloping girders, barrels, fires, pies, springs and rivets.
 **Run and Jump** is the landscape one: sixteen flick-screens at 256x192, ropes,
 arrows, knights, fireballs and a clock that is the real antagonist.
 
+## Getting it
+
+    git clone https://github.com/nodoid/monogame-platform-games
+
 ## Opening it
 
     PlatformBook.slnx     all forty-six chapters, foldered by the book's parts

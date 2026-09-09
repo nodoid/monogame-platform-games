@@ -14,6 +14,10 @@ MonoGame, plus the engine they share.
 
 Both ship a **light theme**: pale ground, dark text, daylight backdrop.
 
+```
+git clone https://github.com/nodoid/monogame-platform-games
+```
+
 ## Layout
 
 ```
