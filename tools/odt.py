@@ -51,22 +51,33 @@ TEXT = {
     "url": "URL [PACKT]",
 }
 
-# The template's "end of list" styles carry no list-style reference, so inside a
-# real list the last item indents differently from the ones above it. These take
-# the ordinary bullet style instead and add only the extra space after the list,
-# which is all the end styles were for.
-LIST_END_STYLES = """<style:style style:name="bullet_end_l" style:family="paragraph"
+# The template's bullet styles set fo:margin-left and fo:text-indent to zero,
+# which overrides the hanging indent its own WW8Num13 list level defines - the
+# bullet lands on the left margin and continuation lines run back underneath it.
+# These put the list's indents back (bullet at 0.635cm, text at 1.27cm) and add
+# the trailing space the template's "end of list" styles existed for.
+LIST_END_STYLES = """<style:style style:name="bullet_l" style:family="paragraph"
  style:parent-style-name="Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num13">
-<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+<style:paragraph-properties fo:margin-left="1.27cm" fo:text-indent="-0.635cm"/></style:style>
+<style:style style:name="bullet_end_l" style:family="paragraph"
+ style:parent-style-name="Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num13">
+<style:paragraph-properties fo:margin-left="1.27cm" fo:text-indent="-0.635cm"
  fo:margin-bottom="0.212cm"/></style:style>
+<style:style style:name="bullet2_l" style:family="paragraph"
+ style:parent-style-name="Bullet_20_Within_20_Bullet_20__5b_PACKT_5d_"
+ style:list-style-name="WW8Num13">
+<style:paragraph-properties fo:margin-left="1.905cm" fo:text-indent="-0.635cm"/></style:style>
 <style:style style:name="bullet2_end_l" style:family="paragraph"
  style:parent-style-name="Bullet_20_Within_20_Bullet_20__5b_PACKT_5d_"
  style:list-style-name="WW8Num13">
-<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+<style:paragraph-properties fo:margin-left="1.905cm" fo:text-indent="-0.635cm"
  fo:margin-bottom="0.212cm"/></style:style>
+<style:style style:name="number_l" style:family="paragraph"
+ style:parent-style-name="Numbered_20_Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num1">
+<style:paragraph-properties fo:margin-left="1.27cm" fo:text-indent="-0.635cm"/></style:style>
 <style:style style:name="number_end_l" style:family="paragraph"
  style:parent-style-name="Numbered_20_Bullet_20__5b_PACKT_5d_" style:list-style-name="WW8Num1">
-<style:paragraph-properties fo:margin-left="0cm" fo:text-indent="0cm"
+<style:paragraph-properties fo:margin-left="1.27cm" fo:text-indent="-0.635cm"
  fo:margin-bottom="0.212cm"/></style:style>"""
 
 
@@ -215,7 +226,7 @@ def bullets(items, style="bullet"):
     for i, item in enumerate(items):
         last = i == len(items) - 1
         kind = end if last else style
-        name = f"{style}_end_l" if last else None
+        name = f"{style}_end_l" if last else f"{style}_l"
         body.append(f"<text:list-item>{para(kind, item, style_name=name)}</text:list-item>")
     return (f'<text:list text:style-name="{LIST_STYLE.get(style, "WW8Num13")}">'
             + "".join(body) + "</text:list>\n")

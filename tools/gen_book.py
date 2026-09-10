@@ -36,11 +36,25 @@ TEMPLATE = os.path.expanduser(
     "~/Downloads/New_Template_Normal_Preface_OT_Mini.dot")
 
 
+# The template puts the page number in a frame 0.51cm wide, which fits two
+# digits and clips the third: page 376 prints as "37". It was cut from a document
+# under a hundred pages long, so nothing there ever showed it. The frame's right
+# edge is pinned to the page content, so widening it grows leftwards and the
+# number stays exactly where it was.
+NARROW_PAGE_NUMBER = 'svg:width="0.51cm" svg:height="0.328cm"'
+WIDE_PAGE_NUMBER = 'svg:width="1.6cm" svg:height="0.328cm"'
+
+
+def fix_template(styles):
+    """Repairs of the converted template that every output needs."""
+    return styles.replace(NARROW_PAGE_NUMBER, WIDE_PAGE_NUMBER, 1)
+
+
 def template_styles():
     """styles.xml straight from the publisher's Word template, converted once."""
     cache = os.path.join(ROOT, "book", ".styles.xml")
     if os.path.exists(cache):
-        return open(cache, encoding="utf-8").read()
+        return fix_template(open(cache, encoding="utf-8").read())
 
     import subprocess, tempfile
     tmp = tempfile.mkdtemp()
@@ -50,7 +64,7 @@ def template_styles():
     styles = zipfile.ZipFile(converted).read("styles.xml").decode("utf-8")
     os.makedirs(os.path.dirname(cache), exist_ok=True)
     open(cache, "w", encoding="utf-8").write(styles)
-    return styles
+    return fix_template(styles)
 
 
 def convert(text, figures=None):
