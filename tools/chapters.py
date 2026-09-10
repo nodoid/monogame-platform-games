@@ -120,7 +120,7 @@ CHAPTERS = [
     C(33, "Hazards and Obstacles", "hunch", E_FULL + H_FULL,
       orient="Portrait", icon="hunch", assets="hunch",
       lens=dict(Hitboxes=True), caption="CH33 HAZARD BOXES"),
-    C(34, "Projectiles and Patrolling Guards", "hunch", E_FULL + H_FULL,
+    C(34, "Projectiles and Patrolling Knights", "hunch", E_FULL + H_FULL,
       orient="Portrait", icon="hunch", assets="hunch",
       lens=dict(Hitboxes=True, AudioMeter=True), caption="CH34 PROJECTILES"),
     C(35, "The Screen Goal and the Bell", "hunch", E_FULL + H_FULL,

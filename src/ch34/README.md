@@ -1,4 +1,4 @@
-# ch34 - Projectiles and Patrolling Guards
+# ch34 - Projectiles and Patrolling Knights
 
 Chapter 34 of *Building Two Classic Platform Games*.
 

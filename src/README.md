@@ -93,7 +93,7 @@ the name the book uses.
     ch31  Precision Jumping
     ch32  Rope Swings and Traversal Gadgets
     ch33  Hazards and Obstacles
-    ch34  Projectiles and Patrolling Guards
+    ch34  Projectiles and Patrolling Knights
     ch35  The Screen Goal and the Bell
     ch36  The Relentless Timer
     ch37  Scoring, Bonuses and the High Score Table

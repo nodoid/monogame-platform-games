@@ -4,7 +4,7 @@ using Retro.Engine;
 namespace Chapter34;
 
 /// <summary>
-/// Chapter 34 - Projectiles and Patrolling Guards.
+/// Chapter 34 - Projectiles and Patrolling Knights.
 ///
 /// The complete game, with this chapter's debug lens switched on so the app
 /// shows what the chapter is about. Turn the lens off and it is the shipping
