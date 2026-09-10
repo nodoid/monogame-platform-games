@@ -126,9 +126,9 @@ public sealed class Arrow
                       Direction < 0 ? SpriteEffects.FlipHorizontally : SpriteEffects.None, 0f);
 }
 
-/// <summary>A guard pacing a fixed beat. He never chases - his only job is to
+/// <summary>A knight pacing a fixed beat. He never chases - his only job is to
 /// occupy a piece of ground on a schedule the player can learn.</summary>
-public sealed class Guard
+public sealed class Knight
 {
     public const float Speed = 26f;
     public Vector2 Position;
@@ -137,10 +137,10 @@ public sealed class Guard
     private int _dir = -1;
     private readonly float _minX, _maxX;
 
-    public Guard(HunchLevel level, Assets assets, Vector2 pos, float range = 44f)
+    public Knight(HunchLevel level, Assets assets, Vector2 pos, float range = 44f)
     {
         _level = level;
-        _anim = new Animation(assets.Texture("guard"), 16, 16, 5f);
+        _anim = new Animation(assets.Texture("knight"), 16, 16, 5f);
         Position = pos;
         _minX = MathF.Max(10f, pos.X - range);
         _maxX = MathF.Min(HunchLevel.PixelWidth - 10f, pos.X + range);

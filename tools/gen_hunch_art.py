@@ -90,7 +90,7 @@ def arrow_sprite():
     return img
 
 
-def guard_frames():
+def knight_frames():
     out = []
     for f in range(2):
         img = canvas(16, 16)
@@ -243,7 +243,7 @@ def build(outdir):
     save(sheet(bell_frames(), 16, 16), p("bell.png"))
     save(rope_tile(), p("rope.png"))
     save(arrow_sprite(), p("arrow.png"))
-    save(sheet(guard_frames(), 16, 16), p("guard.png"))
+    save(sheet(knight_frames(), 16, 16), p("knight.png"))
     save(sheet(fireball_frames(), 12, 12), p("fireball_h.png"))
     save(sheet(firepit_frames(), 16, 16), p("firepit.png"))
     save(spikes_tile(), p("spikes.png"))

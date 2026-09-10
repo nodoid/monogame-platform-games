@@ -42,7 +42,7 @@ public sealed class HunchLevel
     public Vector2 BellPos { get; private set; }
     public List<RopeAnchor> Ropes { get; } = new();
     public List<Vector2> FirePits { get; } = new();
-    public List<Vector2> Guards { get; } = new();
+    public List<Vector2> Knights { get; } = new();
     public List<Vector2> ArrowSlits { get; } = new();
     public List<Vector2> FireBalls { get; } = new();
 
@@ -75,7 +75,7 @@ public sealed class HunchLevel
                     case 'P': lvl.PlayerStart = new Vector2(px + 4, py + Tile8); break;
                     case 'B': lvl.BellPos = new Vector2(px, py); break;
                     case 'F': lvl.FirePits.Add(new Vector2(px, py)); break;
-                    case 'g': lvl.Guards.Add(new Vector2(px + 8, py + Tile8)); break;
+                    case 'g': lvl.Knights.Add(new Vector2(px + 8, py + Tile8)); break;
                     case 'a': lvl.ArrowSlits.Add(new Vector2(px, py)); break;
                     case 'x': lvl.FireBalls.Add(new Vector2(px + 4, py + Tile8)); break;
                     case 'r':

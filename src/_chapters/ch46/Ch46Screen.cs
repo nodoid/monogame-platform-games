@@ -45,8 +45,8 @@ public sealed class Ch46Screen : IScreen
     private int _cursor;
     private bool _demo = true;
     private float _t;
-    private Vector2 _barrelPos, _guardPos;
-    private int _guardDir = 1;
+    private Vector2 _barrelPos, _knightPos;
+    private int _knightDir = 1;
 
     public Ch46Screen(RetroGame game) => _game = game;
 
@@ -60,7 +60,7 @@ public sealed class Ch46Screen : IScreen
         _jack = new Animation(_game.Assets.Texture("jack_run"), 12, 16, 12f).SetRange(1, 3);
         _bell = new Animation(_game.Assets.Texture("bell"), 16, 16, 4f);
         _barrelPos = new Vector2(20, 96);
-        _guardPos = new Vector2(40, 96);
+        _knightPos = new Vector2(40, 96);
         _game.Audio.PlayMusic("music_title");
     }
 
@@ -79,8 +79,8 @@ public sealed class Ch46Screen : IScreen
         _barrelPos.X += 44f * dt;
         if (_barrelPos.X > W + 16) _barrelPos.X = -16;
 
-        _guardPos.X += _guardDir * 26f * dt;
-        if (_guardPos.X > W - 24 || _guardPos.X < 24) _guardDir = -_guardDir;
+        _knightPos.X += _knightDir * 26f * dt;
+        if (_knightPos.X > W - 24 || _knightPos.X < 24) _knightDir = -_knightDir;
     }
 
     public void Draw(SpriteBatch batch)
@@ -109,10 +109,10 @@ public sealed class Ch46Screen : IScreen
             _jack.Draw(batch, new Vector2(34, floorY), false, Color.White);
             _barrel.Draw(batch, _barrelPos, false, Color.White);
             _fire.Draw(batch, new Vector2(88, floorY), false, Color.White);
-            _quasi.Draw(batch, new Vector2(150, floorY), _guardDir < 0, Color.White);
+            _quasi.Draw(batch, new Vector2(150, floorY), _knightDir < 0, Color.White);
             _bell.DrawAt(batch, new Vector2(196, floorY - 24), false, Color.White);
-            var guard = _game.Assets.Texture("guard");
-            batch.Draw(guard, new Rectangle((int)_guardPos.X, floorY - 16, 16, 16),
+            var knight = _game.Assets.Texture("knight");
+            batch.Draw(knight, new Rectangle((int)_knightPos.X, floorY - 16, 16, 16),
                        new Rectangle(((int)(_t * 5) % 2) * 16, 0, 16, 16), Color.White);
         }
         else

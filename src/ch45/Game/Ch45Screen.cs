@@ -30,7 +30,7 @@ public sealed class Ch45Screen : IScreen
     {
         "font", "tiles", "life",
         "jack_run", "barrel", "fireball", "gorilla", "princess",
-        "quasi_run", "bell", "guard", "arrow",
+        "quasi_run", "bell", "knight", "arrow",
     };
 
     private static readonly string[] RequiredSounds =

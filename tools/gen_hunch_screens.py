@@ -194,7 +194,7 @@ SCREENS = [
     ("TWO ROPES", 56, s05()), ("ARROW SLIT", 56, s06()),
     ("CROSSFIRE", 54, s07()), ("THE BRAZIERS", 54, s08()),
     ("ROLLING FIRE", 54, s09()), ("FIRE AND GAPS", 52, s10()),
-    ("THE SENTRY", 52, s11()), ("CHANGING GUARD", 50, s12()),
+    ("THE SENTRY", 52, s11()), ("THE NARROW PASS", 50, s12()),
     ("HIGH WALK", 50, s13()), ("OVER THE FIRE", 48, s14()),
     ("THE PARAPET", 46, s15()), ("THE BELL TOWER", 44, s16()),
 ]

@@ -21,7 +21,7 @@ public sealed class HunchPlayScreen : IScreen
 
     private readonly List<Rope> _ropes = new();
     private readonly List<Arrow> _arrows = new();
-    private readonly List<Guard> _guards = new();
+    private readonly List<Knight> _knights = new();
     private readonly List<FireBall> _fireballs = new();
     private readonly List<FirePit> _fires = new();
     private readonly List<(string Text, Vector2 Pos, float Life)> _popups = new();
@@ -53,11 +53,11 @@ public sealed class HunchPlayScreen : IScreen
         _parallax = new Parallax(_game.Assets);
         _bell = new Bell(_game.Assets, _level.BellPos);
 
-        _ropes.Clear(); _arrows.Clear(); _guards.Clear(); _fireballs.Clear(); _fires.Clear();
+        _ropes.Clear(); _arrows.Clear(); _knights.Clear(); _fireballs.Clear(); _fires.Clear();
         _popups.Clear();
 
         foreach (var r in _level.Ropes) _ropes.Add(new Rope(_game.Assets.Texture("rope"), r));
-        foreach (var g in _level.Guards) _guards.Add(new Guard(_level, _game.Assets, g));
+        foreach (var g in _level.Knights) _knights.Add(new Knight(_level, _game.Assets, g));
         foreach (var f in _level.FirePits) _fires.Add(new FirePit(_game.Assets, f));
 
         _session.TimeLeft = _session.TimeForScreen(_level.TimeLimit);
@@ -193,8 +193,8 @@ public sealed class HunchPlayScreen : IScreen
             if (_fireballs[i].Bounds.Intersects(_runner.HurtBox)) { KillRunner(); return; }
         }
 
-        // ---- guards and fire -------------------------------------------------
-        foreach (var g in _guards)
+        // ---- knights and fire -------------------------------------------------
+        foreach (var g in _knights)
         {
             g.Update(dt);
             if (g.Bounds.Intersects(_runner.HurtBox)) { KillRunner(); return; }
@@ -287,7 +287,7 @@ public sealed class HunchPlayScreen : IScreen
         foreach (var r in _ropes) r.Draw(batch);
         foreach (var f in _fires) f.Draw(batch);
         _bell.Draw(batch);
-        foreach (var g in _guards) g.Draw(batch);
+        foreach (var g in _knights) g.Draw(batch);
         foreach (var a in _arrows) a.Draw(batch);
         foreach (var b in _fireballs) b.Draw(batch);
         _runner.Draw(batch);
@@ -343,7 +343,7 @@ public sealed class HunchPlayScreen : IScreen
             Dbg.Box(batch, px, _runner.Bounds, Theme.DbgBody);
             Dbg.Box(batch, px, _runner.HurtBox, Theme.DbgPath);
             foreach (var a in _arrows) Dbg.Box(batch, px, a.Bounds, Theme.Warn);
-            foreach (var g in _guards) Dbg.Box(batch, px, g.Bounds, Theme.Warn);
+            foreach (var g in _knights) Dbg.Box(batch, px, g.Bounds, Theme.Warn);
             foreach (var b in _fireballs) Dbg.Box(batch, px, b.Bounds, Theme.DbgHazard);
             foreach (var fp in _fires) Dbg.Box(batch, px, fp.Bounds, Theme.Warn);
             foreach (var r in _ropes) Dbg.Box(batch, px, r.GrabBox, Theme.Accent);
